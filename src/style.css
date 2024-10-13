@@ -1,0 +1,284 @@
+@import url('./normalize.css');
+@import url('./font/index.css');
+
+#app {
+  width: clamp(320px, 100%, 1440px);
+  margin: 0 auto;
+  font-family: 'DMSans';
+}
+
+main {
+  display: grid;
+  grid-template: 
+    'create-post social-media social-media schedule' 300px
+    'create-post plataforms consistent-schedule schedule' 75px
+    'ai-content plataforms consistent-schedule schedule' 175px
+    'ai-content audience followers followers' 300px /
+    2fr 3fr 3fr 2fr;
+  gap: 2em;
+  padding: 1em;
+}
+
+section {
+  border-radius: 15px;
+  padding: 1.5em;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  line-height: .9;
+
+  > img {
+    width: 100%;
+  }
+}
+
+.stars {
+  background-color: var(--purple-500);
+  grid-area: social-media;
+  text-align: center;
+  row-gap: .25em;
+}
+
+.stars__title {
+  font-size: 5em;
+  color: var(--white);
+  letter-spacing: -2px;
+}
+
+.stars_yellow {
+  color: var(--yellow-500);
+}
+
+.stars_italic {
+  font-style: italic;
+}
+
+.stars__img {
+  width: 30%;
+  margin-top: 1em;
+}
+
+.stars__txt {
+  color: var(--yellow-100)
+}
+
+.create-post {
+  background-color: var(--yellow-100);
+  grid-area: create-post;
+  row-gap: 2em;
+}
+
+.create-post_purple {
+  color: var(--purple-500);
+  font-style: italic;
+}
+
+.create-post__title {
+  font-weight: 500;
+  font-size: 2.5em;
+  letter-spacing: -2px;
+}
+
+.schedule-post {
+  background-color: var(--purple-100);
+  grid-area: schedule;
+  grid-template-rows: auto 65% auto;
+  contain: paint;
+}
+
+.schedule-post__title {
+  font-size: 1.75em;
+}
+
+.schedule-post__img {
+  height: 90%;
+  width: 120%;
+  object-fit: cover;
+  object-position: 0;
+  position: relative;
+  left: 10%;
+  border-radius: 10px;
+}
+
+.plataforms {
+  background-color: var(--white);
+  grid-area: plataforms;
+  grid-template-rows: 1fr auto;
+  contain: paint;
+}
+
+.plataforms__img {
+  width: 120%;
+  object-fit: cover;
+  object-position: 0;
+  position: relative;
+  left: 10%;
+  object-position: 0;
+  box-shadow: -10px 15px 30px -20px rgba(128, 128, 128, 0.28);
+}
+
+.plataforms__title {
+  font-size: 2.5em;
+  padding-block: .5em;
+}
+
+.consistent-schedule {
+  background-color: var(--yellow-500);
+  grid-area: consistent-schedule;
+  grid-template-rows: 3fr 40%;
+  contain: paint;
+  row-gap: .5em;
+}
+
+.consistent-schedule__title {
+  font-size: 2.25em;
+}
+
+.consistent-schedule__img {
+  height: 200%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  position: relative;
+  top: 30%;
+}
+
+.ai-content {
+  background-color: var(--yellow-500);
+  grid-area: ai-content;
+  place-content: stretch;
+}
+
+.ai-content__title {
+  font-size: 2.5em;
+  letter-spacing: -2px;
+}
+
+.audience-growth {
+  background-color: var(--white);
+  grid-area: audience;
+  place-content: stretch;
+  justify-items: start;
+}
+
+.audience-growth__title {
+  font-size: 5em;
+}
+
+.audience-growth__txt {
+  font-size: 1.75em;
+}
+
+.audience-growth__img {
+  width: 80%;
+  object-fit: cover;
+}
+
+.grow-followers {
+  background-color: var(--purple-500);
+  grid-area: followers;
+  grid-template-columns: 50% 1fr;
+}
+
+.grow-followers__title {
+  color: var(--white);
+  font-size: 2.5em;
+}
+
+@media screen and (width < 1285px) {
+  main {
+    grid-template: 
+      'social-media'
+      'plataforms'
+      'consistent-schedule'
+      'schedule'
+      'followers'
+      'audience'
+      'create-post'
+      'ai-content'
+      / 320px;
+    place-content: center;
+  }
+
+  .stars__title {
+    font-size: 2.75em;
+  }
+
+  .stars__img {
+    width: 60%;
+  }
+
+  .plataforms__title {
+    font-size: 1.25em;
+  }
+
+  .consistent-schedule {
+    place-items: start;
+    grid-template-rows: auto 120px;
+  }
+
+  .consistent-schedule__title {
+    font-size: 1.5em;
+  }
+
+  .consistent-schedule__img {
+    width: 80%;
+    height: 120%;
+    object-fit: contain;
+  }
+
+  .schedule-post {
+    row-gap: .75em;
+    text-align: center;
+  }
+
+  .schedule-post__title {
+    font-size: 1.25em;
+  }
+
+  .schedule-post__img {
+    width: 100%;
+    height: 100%;
+    position: static;
+  }
+
+  .grow-followers {
+    grid-template: 50% 1fr / auto;
+  }
+
+  .grow-followers__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .grow-followers__title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .audience-growth {
+    row-gap: .75em;
+  }
+
+  .audience-growth__title {
+    font-size: 2.5em;
+  }
+
+  .audience-growth__txt {
+    font-size: 1.25em;
+  }
+
+  .ai-content {
+    row-gap: .75em;
+  }
+
+  .ai-content__title {
+    font-size: 2em;
+  }
+
+  .ai-content__img {
+    width: 80%;
+    justify-self: start;
+  }
+}
